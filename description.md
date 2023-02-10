@@ -1,0 +1,1 @@
+In this milestone I learned integrate javascript.
