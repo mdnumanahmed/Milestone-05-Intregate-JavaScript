@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour of Dom</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to DOM</h1>
+    </header>
+    <main>
+        <h1>To know about DOM Visit our site</h1>
+        <h2>The way of select HTML element</h2>
+        <h6 id="heading" class="h6" title="heading">The heading six</h6>
+        <ul>
+            <li class="green">getElementsByTagName() <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores facilis reiciendis rem vero architecto molestias aliquam ullam. Necessitatibus harum magnam ratione ducimus ipsum ex id mollitia minima nobis porro. Eum.</p></li>
+            <li class="green">getElementById()</li>
+            <li class="green">getElementsByClassName()</li>
+            <li>querySelector</li>
+            <li>querySelectorAll</li>
+        </ul>
+    </main>
+
+    <script src="js/dom.js"></script>
+    <script>
+        const heading = document.getElementsByTagName('h1')
+        // return all h1 tags
+        // console.log(heading); 
+        const liCollection = document.getElementsByTagName('li') 
+        // return all li tags
+        for(const li of liCollection){
+            // innerText ব্যবহার করে কোন ট্যাগের লেখাগুলো 
+            // console.log(li.innerText);
+        }
+        const methods = document.getElementsByClassName('green')
+        for(const method of methods){
+            // console.log(method);
+        }
+
+        // querySelector() return first element that matched CSS Selector in document.
+        const firstLi = document.querySelector('.green')
+        // console.log(firstLi.innerText);
+
+        // querySelectorAll() return all element that matched CSS Selector in document. can be interact using loop
+        const someLi = document.querySelectorAll('green')
+        // console.log(someLi);
+        for(const li of someLi){
+            // console.log(li);
+            // console.log(li.innerText);
+        }
+    </script>
+</body>
+</html>
