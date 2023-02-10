@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM EVENTS</title>
+</head>
+<body>
+    <button onclick="console.log(7)">Click Me</button>
+    <!-- Option 1: add onclick directly in HTML -->
+    <button onclick="document.body.style.backgroundColor = 'green'">Make Green</button>
+    <!-- Option 2: add onclick function in HTML and define function in JavaScript -->
+    <button onclick="makeRed()">Make Red</button>
+    <!-- Option 3 A: get element by id and add function name without calling on onclick  -->
+    <button id="make-blue">Make Blue</button>
+    <!-- Option 3 B: get element by id and add function directly on onclick  -->
+    <button id="make-purple">Make Purple</button>
+    <!-- Option 4 A: using addEventListener-->
+    <button id="make-pink">Make Pink</button>
+    <!-- Option 4 B: using addEventListener-->
+    <button id="make-goldenrod">Make Golden Rod</button>
+    <!-- Option 4 C: using addEventListener-->
+    <button id="make-tomato">Make Tomato</button>
+
+
+    <script src="js/events.js"></script>
+
+</body>
+</html>
