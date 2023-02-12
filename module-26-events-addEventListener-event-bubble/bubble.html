@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubble</title>
+</head>
+<body id="body">
+    <h1>Explore event bubble</h1>
+    <section id="list-section">
+        <ul id="list-ul">
+            <li id="item-1">item-1</li>
+            <li id="item-2">item-2</li>
+            <li id="item-3">item-3</li>
+            <li id="item-4">item-4</li>
+            <li id="item-5">item-5</li>
+        </ul>
+    </section>
+
+    <script>
+        /* 
+            event bubble 
+            HTML ফাইলের কোন ইলিমেন্টে ক্লিক করলে, রুট ইলিমেন্ট থেকে শুরু করে সর্বনিম্ন লেভেল পর্যন্ত (উপর থেকে নিচে যেখানে ক্লিক করা হয়েছে) event খুঁজতে থাকে, যাকে Capturing Phase-1 বলে।
+            
+            তারপর যেখানে ক্লিক করা হয়েছে তারমধ্যে কোন event থাকলে তাকে trigger করে, তাকে Target Phase 2 বলে।
+            
+            তারপর উপরের দিকে যেতে যেতে খুঁজতে থাকে আর কোন event আছে কি না? যদি কোন event পাওয়া গেলে trigger করে দেয়, তাকে Bubbling Phase 3 বলে।
+            
+            stopPropagation() মেথডটি ব্যবহার করলে Target Phase এর event টি trigger করার পর উপরের event গুলো বন্ধ করে দেয়।
+
+            stopImmediatePropagation() মেথডটি ব্যবহার করলে Target Phase এর event টি trigger করার পর তার sibling এবং তার উপরের event গুলো বন্ধ করে দেয়।
+
+
+        */
+        document.getElementById('item-2').addEventListener('click', function(event){
+            console.log('item-2 clicked');            
+            // event.stopPropagation()
+            event.stopImmediatePropagation()
+        })
+        document.getElementById('item-2').addEventListener('click', function(event){
+            console.log('item-2 clicked');
+        })
+        document.getElementById('item-2').addEventListener('click', function(event){
+            console.log('item-2 clicked');
+        })
+        document.getElementById('item-2').addEventListener('click', function(event){
+            console.log('item-2 clicked');
+        })
+        document.getElementById('list-ul').addEventListener('click', function(){
+            console.log('List UL clicked');
+        })
+        document.getElementById('list-section').addEventListener('click', function(){
+            console.log('list-section clicked');
+        })
+        document.getElementById('body').addEventListener('click', function(){
+            console.log('body clicked');
+        })
+    </script>
+</body>
+</html>

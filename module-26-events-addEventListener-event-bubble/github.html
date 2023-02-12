@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Confirm Button</title>
+</head>
+<body>
+    <h1 id="deleted-file">If you want to remove this file, please type 'delete'</h1>
+    <input id="delete-confirm" type="text" placeholder="Please write delete">
+    <button id="delete-btn" disabled>Delete</button>
+    
+    <script>
+        // Delete Confirm with typing 
+        const deleteConfirm = document.getElementById('delete-confirm')
+        const deleteBtn = document.getElementById('delete-btn')
+        deleteConfirm.addEventListener('keyup', function(e){
+            const inputText = e.target.value;
+            if(inputText === 'delete'){
+                deleteBtn.removeAttribute('disabled')
+            }else{
+                deleteBtn.setAttribute('disabled', true)
+            }
+        })
+        deleteBtn.addEventListener('click', function(){
+            const deletedFile = document.getElementById('deleted-file')
+            deletedFile.style.display = 'none'
+            // clear the input value
+            deleteConfirm.value = ''
+        })
+    </script>
+</body>
+</html>
