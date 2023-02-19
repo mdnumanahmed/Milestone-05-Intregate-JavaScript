@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Text Editor</title>
+
+  <script src="https://kit.fontawesome.com/c90f151b5f.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-slate-100">
+  <header>
+    <section class="container mx-auto text-center mt-5 p-5">
+      <h1 class="text-4xl text-gray-600">Welcome to my Simple</h1>
+      <h1 class="text-6xl mt-3 text-green-500">Text Editor</h1>
+    </section>
+  </header>
+
+  <main>
+    <section class="container mx-auto text-center mt-3 p-6">
+      <div class="editor-area w-3/4 bg-blue-600 mx-auto h-96 p-6 rounded-lg shadow-xl">
+        <div id="all-formats" class="all-icons">
+          <button id="bold" class="format-btn"><i class="fa-solid fa-bold"></i></button>
+          <button id="italic" class="format-btn"><i class="fa-solid fa-italic"></i></button>
+          <button id="underline" class="format-btn"><i class="fa-solid fa-underline"></i></button>
+          <button id="align-right" class="format-btn"><i class="fa-solid fa-align-left"></i></button>
+          <button id="align-center" class="format-btn"><i class="fa-solid fa-align-center"></i></button>
+          <button id="align-left" class="format-btn"><i class="fa-solid fa-align-right"></i></button>
+          <button id="align-justify" class="format-btn"><i class="fa-solid fa-align-justify"></i></button>
+
+          <select id="heading" class="adv-option-button">
+            <option value="H1">H1</option>
+            <option value="H2">H2</option>
+            <option value="H3">H3</option>
+            <option value="H4">H4</option>
+            <option value="H5">H5</option>
+            <option value="H6">H6</option>
+          </select>
+
+          <select id="font-name" class="adv-option-button"></select>
+          <select id="font-size" class="adv-option-button"></select>
+
+
+          <div class="input-wrapper">
+            <input type="color" id="foreColor" class="adv-option-button" />
+            <label for="foreColor">Font Color</label>
+          </div>
+          <div class="input-wrapper">
+            <input type="color" id="backColor" class="adv-option-button" />
+            <label for="backColor">Highlight Color</label>
+          </div>
+        </div>
+        <div id="text-input" contenteditable="true"></div>
+
+      </div>
+    </section>
+  </main>
+
+  <script src="js/editor.js"></script>
+</body>
+
+</html>
